@@ -31,13 +31,7 @@ document.addEventListener("DOMContentLoaded", event=> {
 
         createMenuitem(menuitem)
 
-        const createdData = (persistData(event.target))
-        Boolean(createdData)
-        ? showCreationState("Menu updated succesfully")
-        : showCreationState("Error Creating Comment")
-        
-        viewRamenMenu(createdData)
-        console.log(createdData)
+        persistData(event.target)
     })
 })
 
@@ -62,8 +56,6 @@ function createMenuitem(item) {
 
 function persistData(form){
 
-    let newitem = {};
-
     const itemData = new FormData(form)
     const itemDataJson = Object.fromEntries(itemData.entries())
 
@@ -79,13 +71,12 @@ function persistData(form){
     fetch("http://localhost:3000/ramens", itemConfig)
     .then(response => response.json())
     .then(updatedItem => {
-        newitem = updatedItem[0]
+        viewRamenMenu(updatedItem)
+        showCreationState("Menu updated succesfully")
     })
     .catch(error => {
-        newitem = null
+        showCreationState("Error Creating Comment")
     })
-
-    return newitem;
 }
 
 function showCreationState(message){
@@ -104,6 +95,5 @@ function showCreationState(message){
     state.appendChild(clear)
 
     state.setAttribute("id", "state")
-    console.log(state)
     document.getElementById("serverstate").appendChild(state)
 }
