@@ -39,6 +39,30 @@
       "image": "./assets/ramen/kojiro.jpg",
       "rating": 6,
       "comment": "Perfect for a cold night."
+    },
+    {
+      "name": "Mozilla Ramen",
+      "restaurant": "denselead",
+      "image": "https://cdn.pixabay.com/photo/2013/07/13/01/22/vegetables-155616_960_720.png",
+      "rating": "6",
+      "comment": "Awesome",
+      "id": 6
+    },
+    {
+      "name": "Zonatu Ramen",
+      "restaurant": "mosutu",
+      "image": "https://cdn.pixabay.com/photo/2016/02/05/15/34/pasta-1181189__340.jpg",
+      "rating": "9",
+      "comment": "Pasta Perfect",
+      "id": 7
+    },
+    {
+      "name": "Banana",
+      "restaurant": "gcm",
+      "image": "https://cdn.pixabay.com/photo/2016/03/05/22/59/onions-1239423__340.jpg",
+      "rating": "9",
+      "comment": "Onions",
+      "id": 8
     }
   ]
 }

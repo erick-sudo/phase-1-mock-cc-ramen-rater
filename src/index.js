@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", event=> {
         createMenuitem(menuitem)
 
         persistData(event.target)
+        document.querySelector("#state-wrapper").scrollIntoView()
     })
 })
 
@@ -80,9 +81,13 @@ function persistData(form){
 }
 
 function showCreationState(message){
+    const state_wrapper = document.createElement("div")
     const state = document.createElement("div")
     const clear = document.createElement("button")
     const messagespan = document.createElement("span")
+    messagespan.setAttribute("id", "message")
+
+    clear.textContent = "X"
 
     clear.setAttribute("id", "clear")
     messagespan.textContent = message
@@ -95,5 +100,8 @@ function showCreationState(message){
     state.appendChild(clear)
 
     state.setAttribute("id", "state")
-    document.getElementById("serverstate").appendChild(state)
+    state_wrapper.setAttribute("id", "state-wrapper")
+
+    state_wrapper.appendChild(state);
+    document.body.appendChild(state_wrapper)
 }

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+#body {
   padding: 1rem;
   text-align: center;
   background-color: #fafafa;
@@ -100,7 +100,35 @@ form h4 {
   color: white;
   background-color: black;
 }
+
+#state-wrapper{
+  position: absolute;
+  width: 100%;
+  margin-top: 20%;
+  z-index: 6;
+}
 #state{
-  background-color: black;
+  display: flex;
+  background-color: rgba(41, 10, 10, .8);
   color: white;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+#message{
+  width: 90%;
+  text-align: center;
+  padding: 0.4em 1em;
+  color: rgb(24, 226, 24);
+}
+#clear{
+  width: 10%;
+  border-radius: 10px;
+  border: solid 1px green;
+  background-color: transparent;
+  color: white;
+  font-weight: bolder;
+}
+#clear:hover{
+  background-color: orange;
 }
